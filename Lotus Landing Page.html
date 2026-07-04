@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="ext-resource-dependency" content="uploads/logo lotus.png" data-resource-id="logoLotus" />
+<meta name="ext-resource-dependency" content="uploads/1.png-99f802c6.png" data-resource-id="seal1" />
+<meta name="ext-resource-dependency" content="uploads/2.png-d3f43700.png" data-resource-id="seal2" />
+<meta name="ext-resource-dependency" content="uploads/3.png-e27129fd.png" data-resource-id="seal3" />
+<meta name="ext-resource-dependency" content="uploads/4.png-24080886.png" data-resource-id="seal4" />
+<meta name="ext-resource-dependency" content="uploads/1.yellow.png" data-resource-id="product1" />
+<meta name="ext-resource-dependency" content="uploads/2green.png.png" data-resource-id="product2" />
+<meta name="ext-resource-dependency" content="uploads/3.tur.png" data-resource-id="product3" />
+<meta name="ext-resource-dependency" content="uploads/4purple.png.png" data-resource-id="product4" />
+<meta name="ext-resource-dependency" content="uploads/ChatGPT Image Jul 3, 2026, 04_08_41 PM.png" data-resource-id="metallicLogo" />
+<title>Lotus - Premium Software</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+    background: #000000;
+    color: #e8e8e8;
+    min-height: 100vh;
+  }
+  .seal-view {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #000000;
+    position: relative;
+  }
+  .product-view {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #000000;
+  }
+  .hidden {
+    display: none;
+  }
+  header {
+    padding: 32px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    gap: 60px;
+  }
+  header img {
+    height: 56px;
+    width: auto;
+  }
+  nav {
+    display: flex;
+    gap: 48px;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+  }
+  nav a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  nav a:hover {
+    color: #999;
+  }
+  .seal-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 60px;
+  }
+  .seal-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    max-width: 280px;
+  }
+  .seal-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.3s ease;
+    transform: scale(1);
+  }
+  .seal-btn:hover {
+    transform: scale(1.05);
+  }
+  .seal-btn img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .product-header {
+    padding: 32px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .product-header img {
+    height: 32px;
+    width: auto;
+  }
+  .back-btn {
+    background: none;
+    border: none;
+    color: #999;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 8px 16px;
+    transition: color 0.2s ease;
+  }
+  .back-btn:hover {
+    color: #e8e8e8;
+  }
+  .hero-section {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 80px 60px;
+    gap: 80px;
+    max-width: 1600px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .product-image {
+    flex: 0 0 380px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 40px;
+  }
+  .product-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    mix-blend-mode: screen;
+  }
+  .product-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .product-title {
+    font-size: 56px;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    margin-bottom: 16px;
+  }
+  .product-tagline {
+    font-size: 20px;
+    color: #d4af37;
+    font-weight: 500;
+  }
+  .price-label {
+    font-size: 14px;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+  .price {
+    font-size: 48px;
+    font-weight: 600;
+    color: #ffffff;
+  }
+  .summary {
+    padding: 32px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 18px;
+    color: #d0d0d0;
+    line-height: 1.7;
+  }
+  .cta-btn {
+    background: #ffffff;
+    color: #000000;
+    border: none;
+    padding: 16px 40px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: fit-content;
+  }
+  .cta-btn:hover {
+    background: #e8e8e8;
+  }
+  .section {
+    padding: 80px 60px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .section h2 {
+    font-size: 32px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 48px;
+    letter-spacing: -0.5px;
+  }
+  .section p {
+    font-size: 16px;
+    color: #c8c8c8;
+    line-height: 1.8;
+    margin-bottom: 24px;
+  }
+  .section ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .section li {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    font-size: 16px;
+    color: #d0d0d0;
+  }
+  .check-icon {
+    color: #d4af37;
+    font-weight: bold;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .dash-icon {
+    color: #999;
+    font-weight: bold;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  footer {
+    background: #000000;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 32px 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  footer a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  footer a:hover {
+    filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.5));
+    transform: scale(1.08);
+  }
+  footer img {
+    height: 48px;
+    width: auto;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+  }
+  footer a:hover img {
+    opacity: 1;
+  }
+</style>
+</head>
+<body>
+
+<template id="__bundler_thumbnail" data-bg-color="#000000">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#000000"/>
+    <g opacity="0.8">
+      <circle cx="300" cy="400" r="60" fill="#d4af37" opacity="0.7"/>
+      <circle cx="600" cy="400" r="60" fill="#2a7d4d" opacity="0.7"/>
+      <circle cx="900" cy="400" r="60" fill="#1ba5a5" opacity="0.7"/>
+    </g>
+    <text x="600" y="650" font-size="42" font-weight="600" fill="#ffffff" text-anchor="middle" letter-spacing="3">LOTUS</text>
+  </svg>
+</template>
+
+<!-- SEAL VIEW -->
+<div id="sealView" class="seal-view">
+  <header>
+    <img src="uploads/logo lotus.png" alt="Lotus" />
+    <nav>
+      <a href="Compare.dc.html">COMPARE</a>
+      <a href="Lotus University.dc.html">LOTUS UNIVERSITY</a>
+      <a href="About.dc.html">ABOUT</a>
+    </nav>
+  </header>
+  
+  <div class="seal-container">
+    <div class="seal-stack">
+      <button class="seal-btn" onclick="showProduct(1)">
+        <img src="uploads/1.png-99f802c6.png" alt="Lotus" />
+      </button>
+      <button class="seal-btn" onclick="showProduct(2)">
+        <img src="uploads/2.png-d3f43700.png" alt="Lotus+" />
+      </button>
+      <button class="seal-btn" onclick="showProduct(3)">
+        <img src="uploads/3.png-e27129fd.png" alt="Lotus Enterprise" />
+      </button>
+      <button class="seal-btn" onclick="showProduct(4)">
+        <img src="uploads/4.png-24080886.png" alt="Lotus Founder" />
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- PRODUCT VIEW (1) -->
+<div id="productView1" class="product-view hidden">
+  <div class="product-header">
+    <img src="uploads/logo lotus.png" alt="Lotus" />
+    <button class="back-btn" onclick="showSeals()">← Back</button>
+  </div>
+  
+  <div class="hero-section">
+    <div class="product-image">
+      <img src="uploads/1.yellow.png" alt="Lotus" />
+    </div>
+    <div class="product-content">
+      <div>
+        <h1 class="product-title">Lotus</h1>
+        <p class="product-tagline">Build for yourself</p>
+      </div>
+      <div>
+        <p class="price-label">One-time project</p>
+        <p class="price">$1,200</p>
+      </div>
+      <p class="summary">A complete self-hosted Lotus App Builder with AI-powered application generation, live preview, mobile and desktop compatibility, and everything needed to start building immediately.</p>
+      <button class="cta-btn">Get Started</button>
+    </div>
+  </div>
+  
+  <div class="section">
+    <h2>Overview</h2>
+    <p>Lotus is a self-hosted application builder designed for individuals and teams who want complete control over their environment. You receive a private builder instance deployed to your infrastructure with all necessary setup and configuration.</p>
+    <p>This package provides everything needed to start building applications immediately. The builder includes AI-powered application generation, live preview workspace, and project management tools accessible from both mobile and desktop.</p>
+    <p>You'll have a secure project workspace with deployment-ready builds and documentation for ongoing self-management. This is the foundation for building applications on your own terms.</p>
+  </div>
+  
+  <div class="section">
+    <h2>Deliverables</h2>
+    <ul>
+      <li><span class="check-icon">✓</span><span>Self-hosted Lotus App Builder</span></li>
+      <li><span class="check-icon">✓</span><span>Private builder environment</span></li>
+      <li><span class="check-icon">✓</span><span>AI-powered application builder</span></li>
+      <li><span class="check-icon">✓</span><span>Live application preview</span></li>
+      <li><span class="check-icon">✓</span><span>Project workspace</span></li>
+      <li><span class="check-icon">✓</span><span>Mobile and desktop compatibility</span></li>
+      <li><span class="check-icon">✓</span><span>Builder documentation</span></li>
+      <li><span class="check-icon">✓</span><span>Installation and initial configuration</span></li>
+      <li><span class="check-icon">✓</span><span>Deployment-ready project</span></li>
+      <li><span class="check-icon">✓</span><span>Complete project handoff</span></li>
+    </ul>
+  </div>
+  
+  <div class="section">
+    <h2>What's Included</h2>
+    <p>You receive the complete Lotus builder platform deployed and configured on your infrastructure. This includes the builder interface, AI generation capabilities, all core functionality, initial setup and deployment assistance, and comprehensive documentation for ongoing self-management.</p>
+  </div>
+  
+  <div class="section">
+    <h2>What's Not Included</h2>
+    <ul>
+      <li><span class="dash-icon">—</span><span>Ongoing maintenance and updates</span></li>
+      <li><span class="dash-icon">—</span><span>Hosting infrastructure (you provide or arrange)</span></li>
+      <li><span class="dash-icon">—</span><span>Additional customization beyond agreed scope</span></li>
+      <li><span class="dash-icon">—</span><span>Third-party integrations not listed in deliverables</span></li>
+      <li><span class="dash-icon">—</span><span>Training or consulting hours beyond project handoff</span></li>
+      <li><span class="dash-icon">—</span><span>Future feature development</span></li>
+      <li><span class="dash-icon">—</span><span>Support beyond project completion</span></li>
+    </ul>
+  </div>
+  
+  <div class="section" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+    <h2>Final Delivery</h2>
+    <p>Upon project completion and final approval, you'll receive all source files, deployment documentation, and a comprehensive walkthrough of the builder platform. We provide initial deployment assistance to ensure your Lotus instance is running smoothly. The project is considered complete upon successful launch and your confirmation that the deliverables meet agreed specifications.</p>
+  </div>
+</div>
+
+<!-- PRODUCT VIEW (2) -->
+<div id="productView2" class="product-view hidden">
+  <div class="product-header">
+    <img src="uploads/logo lotus.png" alt="Lotus" />
+    <button class="back-btn" onclick="showSeals()">← Back</button>
+  </div>
+  
+  <div class="hero-section">
+    <div class="product-image">
+      <img src="uploads/2green.png.png" alt="Lotus+" />
+    </div>
+    <div class="product-content">
+      <div>
+        <h1 class="product-title">Lotus+</h1>
+        <p class="product-tagline">Build + business resources</p>
+      </div>
+      <div>
+        <p class="price-label">One-time project</p>
+        <p class="price">$1,800</p>
+      </div>
+      <p class="summary">A prebuilt business platform paired with Lotus University—complete learning resources and guided onboarding to manage your platform independently from day one.</p>
+      <button class="cta-btn">Get Started</button>
+    </div>
+  </div>
+  
+  <div class="section">
+    <h2>Overview</h2>
+    <p>Lotus+ is designed for entrepreneurs launching a new venture. This package delivers a complete, professionally designed business website built on the Lotus platform, paired with Lotus University—a comprehensive learning platform with structured resources and guided onboarding.</p>
+    <p>The business foundation includes multi-page website architecture, professional branding implementation, client experience workflows, and everything needed for production deployment. Lotus University provides the education needed to understand and manage your platform independently.</p>
+    <p>This is the complete package for someone launching a business online. You receive a fully branded, production-ready website alongside all the learning resources needed to manage, update, and expand it yourself.</p>
+  </div>
+  
+  <div class="section">
+    <h2>Deliverables</h2>
+    <ul>
+      <li><span class="check-icon">✓</span><span>Prebuilt business platform</span></li>
+      <li><span class="check-icon">✓</span><span>Lotus University platform</span></li>
+      <li><span class="check-icon">✓</span><span>Lotus University learning resources</span></li>
+      <li><span class="check-icon">✓</span><span>Builder documentation</span></li>
+      <li><span class="check-icon">✓</span><span>Guided onboarding materials</span></li>
+      <li><span class="check-icon">✓</span><span>Ready-to-use project foundation</span></li>
+      <li><span class="check-icon">✓</span><span>Deployment-ready project</span></li>
+      <li><span class="check-icon">✓</span><span>Complete project handoff</span></li>
+    </ul>
+  </div>
+  
+  <div class="section">
+    <h2>What's Included</h2>
+    <p>You receive a fully functional, professionally designed business website paired with complete access to Lotus University. This includes the Lotus+ builder platform, all branding assets, website pages, client workflows, training platform with educational resources, production deployment, and comprehensive onboarding documentation.</p>
+  </div>
+  
+  <div class="section">
+    <h2>What's Not Included</h2>
+    <ul>
+      <li><span class="dash-icon">—</span><span>Ongoing website maintenance</span></li>
+      <li><span class="dash-icon">—</span><span>Content creation or copywriting beyond initial setup</span></li>
+      <li><span class="dash-icon">—</span><span>Additional pages or sections beyond agreed scope</span></li>
+      <li><span class="dash-icon">—</span><span>Ongoing training or consulting beyond project completion</span></li>
+      <li><span class="dash-icon">—</span><span>Third-party tool integrations outside deliverables</span></li>
+      <li><span class="dash-icon">—</span><span>Hosting costs or platform fees</span></li>
+      <li><span class="dash-icon">—</span><span>Future design updates or redesigns</span></li>
+      <li><span class="dash-icon">—</span><span>Marketing or promotional services</span></li>
+    </ul>
+  </div>
+  
+  <div class="section" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+    <h2>Final Delivery</h2>
+    <p>Upon completion, you'll receive your deployed website, all branding assets, complete Lotus University access, and comprehensive documentation. We provide a training session to walk you through the builder, platform management, and learning resources. The project concludes with full project handoff and your confirmation that all deliverables are complete and operational.</p>
+  </div>
+</div>
+
+<!-- PRODUCT VIEW (3) -->
+<div id="productView3" class="product-view hidden">
+  <div class="product-header">
+    <img src="uploads/logo lotus.png" alt="Lotus" />
+    <button class="back-btn" onclick="showSeals()">← Back</button>
+  </div>
+  
+  <div class="hero-section">
+    <div class="product-image">
+      <img src="uploads/3.tur.png" alt="Lotus Enterprise" />
+    </div>
+    <div class="product-content">
+      <div>
+        <h1 class="product-title">Lotus Enterprise</h1>
+        <p class="product-tagline">Commercial license to use for business</p>
+      </div>
+      <div>
+        <p class="price-label">One-time project</p>
+        <p class="price">$2,400</p>
+      </div>
+      <p class="summary">Everything in Lotus+, plus a commercial-use license, expanded platform capabilities, enhanced builder environment, and premium project configuration for production business use.</p>
+      <button class="cta-btn">Get Started</button>
+    </div>
+  </div>
+  
+  <div class="section">
+    <h2>Overview</h2>
+    <p>Lotus Enterprise is designed for businesses that need to use the Lotus platform commercially. This package includes everything in Lotus+—the prebuilt business platform, Lotus University, and complete learning resources—plus a commercial-use license, expanded capabilities, and an enhanced builder environment.</p>
+    <p>You receive a production-ready platform configured with premium settings and advanced features. The commercial license grants you the right to use the delivered project for business purposes. All code, configurations, and assets are documented with comprehensive guidance for ongoing management.</p>
+    <p>This is the platform for businesses ready to operate at scale. You get everything needed to launch and operate a professional business with commercial rights, expanded capabilities, and premium configuration.</p>
+  </div>
+  
+  <div class="section">
+    <h2>Deliverables</h2>
+    <ul>
+      <li><span class="check-icon">✓</span><span>Everything included in Lotus+</span></li>
+      <li><span class="check-icon">✓</span><span>Commercial-use license</span></li>
+      <li><span class="check-icon">✓</span><span>Expanded platform capabilities</span></li>
+      <li><span class="check-icon">✓</span><span>Enhanced builder environment</span></li>
+      <li><span class="check-icon">✓</span><span>Premium project configuration</span></li>
+      <li><span class="check-icon">✓</span><span>Advanced documentation</span></li>
+      <li><span class="check-icon">✓</span><span>Production-ready deployment</span></li>
+      <li><span class="check-icon">✓</span><span>Complete project handoff</span></li>
+    </ul>
+  </div>
+  
+  <div class="section">
+    <h2>What's Included</h2>
+    <p>You receive everything in Lotus+ plus a commercial-use license for the delivered project. This includes the prebuilt business platform, Lotus University, expanded platform capabilities, enhanced builder environment, production-ready configuration, and comprehensive advanced documentation.</p>
+  </div>
+  
+  <div class="section">
+    <h2>What's Not Included</h2>
+    <ul>
+      <li><span class="dash-icon">—</span><span>Ongoing platform maintenance</span></li>
+      <li><span class="dash-icon">—</span><span>Additional pages beyond agreed scope</span></li>
+      <li><span class="dash-icon">—</span><span>Content creation or copywriting</span></li>
+      <li><span class="dash-icon">—</span><span>Lead follow-up or sales operations</span></li>
+      <li><span class="dash-icon">—</span><span>Ongoing training beyond project completion</span></li>
+      <li><span class="dash-icon">—</span><span>Third-party integrations outside deliverables</span></li>
+      <li><span class="dash-icon">—</span><span>Hosting or infrastructure costs</span></li>
+      <li><span class="dash-icon">—</span><span>Marketing or advertising campaigns</span></li>
+      <li><span class="dash-icon">—</span><span>Future updates or new features</span></li>
+    </ul>
+  </div>
+  
+  <div class="section" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+    <h2>Final Delivery</h2>
+    <p>Upon project completion, you'll receive your fully deployed commercial platform, all assets, complete documentation, Lotus University access, and commercial license documentation. We provide deployment assistance and a complete walkthrough of all platform features. The project concludes with final approval and successful platform launch.</p>
+  </div>
+</div>
+
+<!-- PRODUCT VIEW (4) -->
+<div id="productView4" class="product-view hidden">
+  <div class="product-header">
+    <img src="uploads/logo lotus.png" alt="Lotus" />
+    <button class="back-btn" onclick="showSeals()">← Back</button>
+  </div>
+  
+  <div class="hero-section">
+    <div class="product-image">
+      <img src="uploads/4purple.png.png" alt="Lotus Founder" />
+    </div>
+    <div class="product-content">
+      <div>
+        <h1 class="product-title">Lotus Founder</h1>
+        <p class="product-tagline">Full ownership of code, repository, and IP</p>
+      </div>
+      <div>
+        <p class="price-label">One-time project</p>
+        <p class="price">$2,800</p>
+      </div>
+      <p class="summary">Everything in Lotus Enterprise, plus full source code ownership, GitHub repository transfer, complete rights to modify and self-host, and all necessary ownership documentation.</p>
+      <button class="cta-btn">Get Started</button>
+    </div>
+  </div>
+  
+  <div class="section">
+    <h2>Overview</h2>
+    <p>Lotus Founder is built for founders and business leaders who want complete ownership and control. This package includes everything in Lotus Enterprise—the commercial license, expanded platform, and complete Lotus University—plus full source code ownership and repository transfer.</p>
+    <p>You receive the complete, professionally built platform as your intellectual property. You have full rights to modify, expand, deploy anywhere, and manage the codebase independently. This includes a remote AI automation workspace setup, comprehensive technical documentation, and all necessary ownership transfer documentation.</p>
+    <p>With Lotus Founder, you don't license a platform—you own it completely. Every line of code, every configuration, every asset belongs to you. You can modify it, extend it, commercialize it, or use it however you need.</p>
+  </div>
+  
+  <div class="section">
+    <h2>Deliverables</h2>
+    <ul>
+      <li><span class="check-icon">✓</span><span>Everything included in Lotus Enterprise</span></li>
+      <li><span class="check-icon">✓</span><span>Full ownership of the completed project</span></li>
+      <li><span class="check-icon">✓</span><span>Complete source code</span></li>
+      <li><span class="check-icon">✓</span><span>GitHub repository transfer</span></li>
+      <li><span class="check-icon">✓</span><span>Full rights to modify, expand, and self-host</span></li>
+      <li><span class="check-icon">✓</span><span>Remote AI Automation Workspace Setup</span></li>
+      <li><span class="check-icon">✓</span><span>Technical documentation</span></li>
+      <li><span class="check-icon">✓</span><span>Ownership transfer documentation</span></li>
+      <li><span class="check-icon">✓</span><span>Marketing assets for promoting Lotus</span></li>
+      <li><span class="check-icon">✓</span><span>Complete project handoff</span></li>
+    </ul>
+  </div>
+  
+  <div class="section">
+    <h2>What's Included</h2>
+    <p>You receive complete ownership of the Lotus platform including full source code, GitHub repository access, and all rights to modification and deployment. This includes everything in Lotus Enterprise, complete source code ownership, repository transfer, AI automation workspace setup, comprehensive technical documentation, ownership transfer documentation, and promotional materials.</p>
+  </div>
+  
+  <div class="section">
+    <h2>What's Not Included</h2>
+    <ul>
+      <li><span class="dash-icon">—</span><span>Ongoing development or maintenance</span></li>
+      <li><span class="dash-icon">—</span><span>Ongoing training beyond project delivery</span></li>
+      <li><span class="dash-icon">—</span><span>Future feature development or improvements</span></li>
+      <li><span class="dash-icon">—</span><span>Third-party integrations outside deliverables</span></li>
+      <li><span class="dash-icon">—</span><span>Hosting, infrastructure, or cloud costs</span></li>
+      <li><span class="dash-icon">—</span><span>Business consulting or strategy services</span></li>
+      <li><span class="dash-icon">—</span><span>Marketing or business development support</span></li>
+      <li><span class="dash-icon">—</span><span>Support beyond initial project completion</span></li>
+    </ul>
+  </div>
+  
+  <div class="section" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+    <h2>Final Delivery</h2>
+    <p>Upon completion, you receive complete ownership transfer of the Lotus platform including full source code, GitHub repository, all technical documentation, and ownership rights documentation. We provide comprehensive documentation review, repository access setup, and a complete handoff walkthrough. The project concludes with your confirmation of full access and ownership, with all assets transferred to your control.</p>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <a href="https://metallicv1.com" target="_blank" rel="noopener noreferrer">
+    <img src="uploads/ChatGPT Image Jul 3, 2026, 04_08_41 PM.png" alt="Metallic.v1" />
+  </a>
+</footer>
+
+<script>
+function showSeals() {
+  document.getElementById('sealView').classList.remove('hidden');
+  document.getElementById('productView1').classList.add('hidden');
+  document.getElementById('productView2').classList.add('hidden');
+  document.getElementById('productView3').classList.add('hidden');
+  document.getElementById('productView4').classList.add('hidden');
+  window.scrollTo(0, 0);
+}
+
+function showProduct(num) {
+  document.getElementById('sealView').classList.add('hidden');
+  document.getElementById('productView1').classList.add('hidden');
+  document.getElementById('productView2').classList.add('hidden');
+  document.getElementById('productView3').classList.add('hidden');
+  document.getElementById('productView4').classList.add('hidden');
+  document.getElementById('productView' + num).classList.remove('hidden');
+  window.scrollTo(0, 0);
+}
+</script>
+
+</body>
+</html>

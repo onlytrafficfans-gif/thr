@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compare Lotus Packages</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+      background: #000000;
+      color: #e8e8e8;
+      min-height: 100vh;
+    }
+  </style>
+</helmet>
+
+<!-- Navigation -->
+<div style="padding: 32px 60px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); display: flex; align-items: center; justify-content: center; gap: 60px;">
+  <img src="uploads/logo lotus.png" alt="Lotus" style="height: 48px; width: auto;">
+  
+  <div style="display: flex; gap: 48px; font-size: 13px; letter-spacing: 0.5px; font-weight: 500;">
+    <a href="Compare.dc.html" style="color: #ffffff; text-decoration: none; transition: color 0.2s;" style-hover="color: #999;">COMPARE</a>
+    <a href="Lotus University.dc.html" style="color: #ffffff; text-decoration: none; transition: color 0.2s;" style-hover="color: #999;">LOTUS UNIVERSITY</a>
+    <a href="About.dc.html" style="color: #ffffff; text-decoration: none; transition: color 0.2s;" style-hover="color: #999;">ABOUT</a>
+  </div>
+</div>
+
+<!-- Header Section -->
+<div style="padding: 80px 60px; text-align: center; max-width: 900px; margin: 0 auto;">
+  <h1 style="font-size: 48px; font-weight: 600; color: #ffffff; margin-bottom: 24px; letter-spacing: -1px;"><br></h1>
+  <p style="font-size: 18px; color: #999; line-height: 1.7;">
+    Choose the package that's right for you. Compare every edition side by side to see exactly what's included with each version.
+  </p>
+</div>
+
+<!-- Package Headers -->
+<div style="padding: 0 60px 60px 60px; display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 40px; max-width: 1400px; margin: 0 auto;">
+  
+  <!-- Lotus Yellow -->
+  <div style="display: flex; flex-direction: column; align-items: center; gap: 20px; cursor: pointer; transition: all 0.2s;" style-hover="transform: scale(1.05);">
+    <img src="uploads/1.png-99f802c6.png" alt="Lotus" style="width: 180px; height: 180px; object-fit: contain;">
+    <div style="text-align: center;">
+      <h3 style="font-size: 20px; font-weight: 600; color: #ffd700; margin-bottom: 8px;">Lotus</h3>
+      <p style="font-size: 16px; color: #ffffff; font-weight: 500;">$1,200</p>
+    </div>
+  </div>
+
+  <!-- Lotus+ Green -->
+  <div style="display: flex; flex-direction: column; align-items: center; gap: 20px; cursor: pointer; transition: all 0.2s;" style-hover="transform: scale(1.05);">
+    <img src="uploads/2.png-d3f43700.png" alt="Lotus+" style="width: 180px; height: 180px; object-fit: contain;">
+    <div style="text-align: center;">
+      <h3 style="font-size: 20px; font-weight: 600; color: #22c55e; margin-bottom: 8px;">Lotus+</h3>
+      <p style="font-size: 16px; color: #ffffff; font-weight: 500;">$1,800</p>
+    </div>
+  </div>
+
+  <!-- Lotus Enterprise Turquoise -->
+  <div style="display: flex; flex-direction: column; align-items: center; gap: 20px; cursor: pointer; transition: all 0.2s;" style-hover="transform: scale(1.05);">
+    <img src="uploads/3.png-e27129fd.png" alt="Lotus Enterprise" style="width: 180px; height: 180px; object-fit: contain;">
+    <div style="text-align: center;">
+      <h3 style="font-size: 20px; font-weight: 600; color: #06b6d4; margin-bottom: 8px;">Lotus Enterprise</h3>
+      <p style="font-size: 16px; color: #ffffff; font-weight: 500;">$2,400</p>
+    </div>
+  </div>
+
+  <!-- Lotus Founder Purple -->
+  <div style="display: flex; flex-direction: column; align-items: center; gap: 20px; cursor: pointer; transition: all 0.2s;" style-hover="transform: scale(1.05);">
+    <img src="uploads/4.png-24080886.png" alt="Lotus Founder" style="width: 180px; height: 180px; object-fit: contain;">
+    <div style="text-align: center;">
+      <h3 style="font-size: 20px; font-weight: 600; color: #a855f7; margin-bottom: 8px;">Lotus Founder</h3>
+      <p style="font-size: 16px; color: #ffffff; font-weight: 500;">$2,800</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- Comparison Table -->
+<div style="padding: 0 60px 80px 60px; max-width: 1600px; margin: 0 auto; overflow-x: auto;">
+  
+  <div style="border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; overflow: hidden;">
+    <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
+      
+      <!-- Header Row -->
+      <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+        <td style="padding: 24px; background: rgba(255, 255, 255, 0.02); color: #999; font-weight: 500; text-align: left;">Feature</td>
+        <td style="padding: 24px; background: rgba(212, 175, 55, 0.05); color: #d4af37; font-weight: 600; text-align: center;">Lotus</td>
+        <td style="padding: 24px; background: rgba(100, 200, 100, 0.05); color: #64c864; font-weight: 600; text-align: center;">Lotus+</td>
+        <td style="padding: 24px; background: rgba(100, 200, 200, 0.05); color: #64c8c8; font-weight: 600; text-align: center;">Enterprise</td>
+        <td style="padding: 24px; background: rgba(180, 100, 200, 0.05); color: #b464c8; font-weight: 600; text-align: center;">Founder</td>
+      </tr>
+
+      <!-- Feature Rows -->
+      <sc-for list="{{ features }}" as="feature" hint-placeholder-count="8">
+        <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.04);">
+          <td style="padding: 20px 24px; color: #c8c8c8; text-align: left;">{{ feature.name }}</td>
+          <td style="padding: 20px 24px; text-align: center; color: {{ feature.lotusColor }};">{{ feature.lotusDisplay }}</td>
+          <td style="padding: 20px 24px; text-align: center; color: {{ feature.lotusPlusColor }};">{{ feature.lotusPlusDisplay }}</td>
+          <td style="padding: 20px 24px; text-align: center; color: {{ feature.enterpriseColor }};">{{ feature.enterpriseDisplay }}</td>
+          <td style="padding: 20px 24px; text-align: center; color: {{ feature.founderColor }};">{{ feature.founderDisplay }}</td>
+        </tr>
+      </sc-for>
+
+    </table>
+  </div>
+
+</div>
+
+<!-- Footer CTA -->
+<div style="padding: 80px 60px; text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.08);">
+  <h2 style="font-size: 32px; font-weight: 600; color: #ffffff; margin-bottom: 32px;">Ready to get started?</h2>
+  <a href="#" style="display: inline-block; background: #ffffff; color: #000000; padding: 16px 40px; border: none; border-radius: 4px; font-size: 16px; font-weight: 500; cursor: pointer; text-decoration: none; transition: all 0.2s;" style-hover="background: #e8e8e8;">
+    View Packages
+  </a>
+</div>
+
+<!-- Footer with Metallic.v1 Logo -->
+<footer style="background: #000000; border-top: 1px solid rgba(255, 255, 255, 0.08); padding: 32px 60px; display: flex; justify-content: center; align-items: center;">
+  <a href="https://metallicv1.com" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; cursor: pointer;" style-hover="filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.5)); transform: scale(1.08);">
+    <img src="uploads/ChatGPT?Image?Jul?3??2026??04_08_41?PM.png" alt="Metallic.v1" style="height: 48px; width: auto; opacity: 0.7; transition: opacity 0.3s ease;" style-hover="opacity: 1;" />
+  </a>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: &quot;1400px&quot;, &quot;height&quot;: &quot;900px&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const featuresData = [
+      { name: 'Self-Hosted App Builder', lotus: true, lotusPlus: true, enterprise: true, founder: true },
+      { name: 'Private Builder Environment', lotus: true, lotusPlus: true, enterprise: true, founder: true },
+      { name: 'AI-Powered Application Builder', lotus: true, lotusPlus: true, enterprise: true, founder: true },
+      { name: 'Live Application Preview', lotus: true, lotusPlus: true, enterprise: true, founder: true },
+      { name: 'Mobile & Desktop Compatibility', lotus: true, lotusPlus: true, enterprise: true, founder: true },
+      { name: 'Prebuilt Business Platform', lotus: false, lotusPlus: true, enterprise: true, founder: true },
+      { name: 'Lotus University Access', lotus: false, lotusPlus: true, enterprise: true, founder: true },
+      { name: 'Guided Onboarding Materials', lotus: false, lotusPlus: true, enterprise: true, founder: true },
+      { name: 'Commercial Use License', lotus: false, lotusPlus: false, enterprise: true, founder: true },
+      { name: 'Expanded Platform Capabilities', lotus: false, lotusPlus: false, enterprise: true, founder: true },
+      { name: 'Enhanced Builder Environment', lotus: false, lotusPlus: false, enterprise: true, founder: true },
+      { name: 'Premium Project Configuration', lotus: false, lotusPlus: false, enterprise: true, founder: true },
+      { name: 'Source Code Ownership', lotus: false, lotusPlus: false, enterprise: false, founder: true },
+      { name: 'GitHub Repository Transfer', lotus: false, lotusPlus: false, enterprise: false, founder: true },
+      { name: 'Full Rights to Modify & Self-Host', lotus: false, lotusPlus: false, enterprise: false, founder: true },
+      { name: 'AI Automation Workspace Setup', lotus: false, lotusPlus: false, enterprise: false, founder: true },
+      { name: 'Full Ownership & IP Rights', lotus: false, lotusPlus: false, enterprise: false, founder: true },
+      { name: 'Marketing Assets', lotus: false, lotusPlus: false, enterprise: false, founder: true },
+    ];
+
+    const features = featuresData.map(f => ({
+      name: f.name,
+      lotus: f.lotus,
+      lotusPlus: f.lotusPlus,
+      enterprise: f.enterprise,
+      founder: f.founder,
+      lotusDisplay: f.lotus ? '✅' : '➖',
+      lotusColor: f.lotus ? '#4ade80' : '#666',
+      lotusPlusDisplay: f.lotusPlus ? '✅' : '➖',
+      lotusPlusColor: f.lotusPlus ? '#4ade80' : '#666',
+      enterpriseDisplay: f.enterprise ? '✅' : '➖',
+      enterpriseColor: f.enterprise ? '#4ade80' : '#666',
+      founderDisplay: f.founder ? '✅' : '➖',
+      founderColor: f.founder ? '#4ade80' : '#666',
+    }));
+
+    return { features };
+  }
+}
+
+</script>
+</body>
+</html>
