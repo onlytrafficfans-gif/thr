@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lotus - Premium Software</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+      background: #000000;
+      color: #e8e8e8;
+      min-height: 100vh;
+    }
+  </style>
+</helmet>
+
+<sc-if value="{{ !currentView }}" hint-placeholder-val="{{ true }}">
+  <!-- SEAL SELECTOR VIEW -->
+  <div style="min-height: 100vh; display: flex; flex-direction: column; background: #000000; position: relative;">
+    
+    <!-- Header with Navigation -->
+    <div style="padding: 32px 60px; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid rgba(255, 255, 255, 0.08); gap: 60px;">
+      <img src="uploads/logo lotus.png" alt="Lotus" style="height: 56px; width: auto;" />
+      
+      <div style="display: flex; gap: 48px; font-size: 13px; letter-spacing: 0.5px; font-weight: 500;">
+        <a href="Compare.dc.html" style="color: #ffffff; text-decoration: none; transition: color 0.2s;" style-hover="color: #999;">COMPARE</a>
+        <a href="Lotus University.dc.html" style="color: #ffffff; text-decoration: none; transition: color 0.2s;" style-hover="color: #999;">LOTUS UNIVERSITY</a>
+        <a href="About.dc.html" style="color: #ffffff; text-decoration: none; transition: color 0.2s;" style-hover="color: #999;">ABOUT</a>
+      </div>
+    </div>
+
+    <!-- Center Content -->
+    <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 80px 60px;">
+      
+      <!-- Seal Buttons Stack -->
+      <div style="display: flex; flex-direction: column; gap: 24px; width: 100%; max-width: 280px;">
+        
+        <button onClick="{{ selectSeal }}" data-seal="1" style="background: none; border: none; cursor: pointer; padding: 0; transition: all 0.3s ease; transform: scale(1);" style-hover="transform: scale(1.05);">
+          <img src="uploads/1.png-99f802c6.png" alt="Lotus" style="width: 100%; height: auto; display: block;" />
+        </button>
+
+        <button onClick="{{ selectSeal }}" data-seal="2" style="background: none; border: none; cursor: pointer; padding: 0; transition: all 0.3s ease; transform: scale(1);" style-hover="transform: scale(1.05);">
+          <img src="uploads/2.png-d3f43700.png" alt="Lotus+" style="width: 100%; height: auto; display: block;" />
+        </button>
+
+        <button onClick="{{ selectSeal }}" data-seal="3" style="background: none; border: none; cursor: pointer; padding: 0; transition: all 0.3s ease; transform: scale(1);" style-hover="transform: scale(1.05);">
+          <img src="uploads/3.png-e27129fd.png" alt="Lotus Enterprise" style="width: 100%; height: auto; display: block;" />
+        </button>
+
+        <button onClick="{{ selectSeal }}" data-seal="4" style="background: none; border: none; cursor: pointer; padding: 0; transition: all 0.3s ease; transform: scale(1);" style-hover="transform: scale(1.05);">
+          <img src="uploads/4.png-24080886.png" alt="Lotus Founder" style="width: 100%; height: auto; display: block;" />
+        </button>
+
+      </div>
+    </div>
+  </div>
+</sc-if>
+
+<sc-if value="{{ currentView }}" hint-placeholder-val="{{ 1 }}">
+  <!-- PRODUCT DETAIL VIEW -->
+  <div style="min-height: 100vh; display: flex; flex-direction: column; background: #000000;">
+    
+    <!-- Header -->
+    <div style="padding: 32px 60px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+      <img src="uploads/logo lotus.png" alt="Lotus" style="height: 32px; width: auto;" />
+      <button onClick="{{ goBack }}" style="background: none; border: none; color: #999; font-size: 14px; cursor: pointer; padding: 8px 16px; transition: color 0.2s ease;" style-hover="color: #e8e8e8;">
+        ← Back
+      </button>
+    </div>
+
+    <!-- Hero Section -->
+    <div style="display: flex; flex-direction: row; align-items: flex-start; padding: 80px 60px; gap: 80px; max-width: 1600px; margin: 0 auto; width: 100%;">
+      
+      <!-- Product Image -->
+      <div style="flex: 0 0 380px; display: flex; align-items: center; justify-content: center; padding-top: 40px;">
+        <img src="{{ productImage }}" alt="Product" style="width: 100%; height: auto; object-fit: contain; mix-blend-mode: screen;" />
+      </div>
+
+      <!-- Content -->
+      <div style="flex: 1; display: flex; flex-direction: column; gap: 32px;">
+        
+        <!-- Title & Tagline -->
+        <div>
+          <h1 style="font-size: 56px; font-weight: 600; color: #ffffff; line-height: 1.1; letter-spacing: -1px; margin-bottom: 16px;">
+            {{ productTitle }}
+          </h1>
+          <p style="font-size: 20px; color: #d4af37; font-weight: 500;">
+            {{ productTagline }}
+          </p>
+        </div>
+
+        <!-- Price -->
+        <div>
+          <p style="font-size: 14px; color: #666; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;">One-time project</p>
+          <p style="font-size: 48px; font-weight: 600; color: #ffffff;">
+            {{ productPrice }}
+          </p>
+        </div>
+
+        <!-- Summary -->
+        <div style="padding: 32px 0; border-top: 1px solid rgba(255, 255, 255, 0.08); border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+          <p style="font-size: 18px; color: #d0d0d0; line-height: 1.7;">
+            {{ productSummary }}
+          </p>
+        </div>
+
+        <!-- CTA -->
+        <div>
+          <button style="background: #ffffff; color: #000000; border: none; padding: 16px 40px; font-size: 16px; font-weight: 500; cursor: pointer; transition: all 0.2s ease;" style-hover="background: #e8e8e8;">
+            Get Started
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Detailed Overview -->
+    <div style="padding: 80px 60px; border-top: 1px solid rgba(255, 255, 255, 0.08); max-width: 900px; margin: 0 auto; width: 100%;">
+      
+      <h2 style="font-size: 32px; font-weight: 600; color: #ffffff; margin-bottom: 48px; letter-spacing: -0.5px;">
+        Overview
+      </h2>
+
+      <div style="display: flex; flex-direction: column; gap: 28px;">
+        <sc-for list="{{ overviewParagraphs }}" as="para" hint-placeholder-count="3">
+          <p style="font-size: 16px; color: #c8c8c8; line-height: 1.8;">
+            {{ para }}
+          </p>
+        </sc-for>
+      </div>
+
+    </div>
+
+    <!-- Deliverables -->
+    <div style="padding: 80px 60px; border-top: 1px solid rgba(255, 255, 255, 0.08); max-width: 900px; margin: 0 auto; width: 100%;">
+      
+      <h2 style="font-size: 32px; font-weight: 600; color: #ffffff; margin-bottom: 48px; letter-spacing: -0.5px;">
+        Deliverables
+      </h2>
+
+      <ul style="list-style: none; display: flex; flex-direction: column; gap: 20px;">
+        <sc-for list="{{ deliverables }}" as="item" hint-placeholder-count="4">
+          <li style="display: flex; align-items: flex-start; gap: 16px; font-size: 16px; color: #d0d0d0;">
+            <span style="color: #d4af37; font-weight: bold; flex-shrink: 0; margin-top: 2px;">✓</span>
+            <span>{{ item }}</span>
+          </li>
+        </sc-for>
+      </ul>
+
+    </div>
+
+    <!-- What's Included -->
+    <div style="padding: 80px 60px; border-top: 1px solid rgba(255, 255, 255, 0.08); max-width: 900px; margin: 0 auto; width: 100%;">
+      
+      <h2 style="font-size: 32px; font-weight: 600; color: #ffffff; margin-bottom: 48px; letter-spacing: -0.5px;">
+        What's Included
+      </h2>
+
+      <p style="font-size: 16px; color: #c8c8c8; line-height: 1.8;">
+        {{ whatIncluded }}
+      </p>
+
+    </div>
+
+    <!-- What's Not Included -->
+    <div style="padding: 80px 60px; border-top: 1px solid rgba(255, 255, 255, 0.08); max-width: 900px; margin: 0 auto; width: 100%;">
+      
+      <h2 style="font-size: 32px; font-weight: 600; color: #ffffff; margin-bottom: 48px; letter-spacing: -0.5px;">
+        What's Not Included
+      </h2>
+
+      <ul style="list-style: none; display: flex; flex-direction: column; gap: 16px;">
+        <sc-for list="{{ notIncluded }}" as="item" hint-placeholder-count="3">
+          <li style="display: flex; align-items: flex-start; gap: 16px; font-size: 16px; color: #d0d0d0;">
+            <span style="color: #999; font-weight: bold; flex-shrink: 0; margin-top: 2px;">—</span>
+            <span>{{ item }}</span>
+          </li>
+        </sc-for>
+      </ul>
+
+    </div>
+
+    <!-- Final Delivery -->
+    <div style="padding: 80px 60px; border-top: 1px solid rgba(255, 255, 255, 0.08); max-width: 900px; margin: 0 auto; width: 100%; border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+      
+      <h2 style="font-size: 32px; font-weight: 600; color: #ffffff; margin-bottom: 48px; letter-spacing: -0.5px;">
+        Final Delivery
+      </h2>
+
+      <p style="font-size: 16px; color: #c8c8c8; line-height: 1.8;">
+        {{ finalDelivery }}
+      </p>
+
+    </div>
+
+  </div>
+</sc-if>
+
+<!-- Footer with Metallic.v1 Logo -->
+<footer style="background: #000000; border-top: 1px solid rgba(255, 255, 255, 0.08); padding: 32px 60px; display: flex; justify-content: center; align-items: center;">
+  <a href="https://metallicv1.com" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; cursor: pointer;" style-hover="filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.5)); transform: scale(1.08);">
+    <img src="uploads/ChatGPT?Image?Jul?3??2026??04_08_41?PM.png" alt="Metallic.v1" style="height: 48px; width: auto; opacity: 0.7; transition: opacity 0.3s ease;" style-hover="opacity: 1;" />
+  </a>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: &quot;1400px&quot;, &quot;height&quot;: &quot;900px&quot;}}">
+class Component extends DCLogic {
+  state = {
+    currentView: null,
+  };
+
+  productData = {
+    1: {
+      title: 'Lotus',
+      tagline: 'Build for yourself',
+      price: '$1,200',
+      summary: 'A complete self-hosted Lotus App Builder with AI-powered application generation, live preview, mobile and desktop compatibility, and everything needed to start building immediately.',
+      overviewParagraphs: [
+        'Lotus is a self-hosted application builder designed for individuals and teams who want complete control over their environment. You receive a private builder instance deployed to your infrastructure with all necessary setup and configuration.',
+        'This package provides everything needed to start building applications immediately. The builder includes AI-powered application generation, live preview workspace, and project management tools accessible from both mobile and desktop.',
+        'You\'ll have a secure project workspace with deployment-ready builds and documentation for ongoing self-management. This is the foundation for building applications on your own terms.',
+      ],
+      deliverables: [
+        'Self-hosted Lotus App Builder',
+        'Private builder environment',
+        'AI-powered application builder',
+        'Live application preview',
+        'Project workspace',
+        'Mobile and desktop compatibility',
+        'Builder documentation',
+        'Installation and initial configuration',
+        'Deployment-ready project',
+        'Complete project handoff',
+      ],
+      whatIncluded: 'You receive the complete Lotus builder platform deployed and configured on your infrastructure. This includes the builder interface, AI generation capabilities, all core functionality, initial setup and deployment assistance, and comprehensive documentation for ongoing self-management.',
+      notIncluded: [
+        'Ongoing maintenance and updates',
+        'Hosting infrastructure (you provide or arrange)',
+        'Additional customization beyond agreed scope',
+        'Third-party integrations not listed in deliverables',
+        'Training or consulting hours beyond project handoff',
+        'Future feature development',
+        'Support beyond project completion',
+      ],
+      finalDelivery: 'Upon project completion and final approval, you\'ll receive all source files, deployment documentation, and a comprehensive walkthrough of the builder platform. We provide initial deployment assistance to ensure your Lotus instance is running smoothly. The project is considered complete upon successful launch and your confirmation that the deliverables meet agreed specifications.',
+      image: 'uploads/1.yellow.png',
+    },
+    2: {
+      title: 'Lotus+',
+      tagline: 'Build + business resources',
+      price: '$1,800',
+      summary: 'A prebuilt business platform paired with Lotus University—complete learning resources and guided onboarding to manage your platform independently from day one.',
+      overviewParagraphs: [
+        'Lotus+ is designed for entrepreneurs launching a new venture. This package delivers a complete, professionally designed business website built on the Lotus platform, paired with Lotus University—a comprehensive learning platform with structured resources and guided onboarding.',
+        'The business foundation includes multi-page website architecture, professional branding implementation, client experience workflows, and everything needed for production deployment. Lotus University provides the education needed to understand and manage your platform independently.',
+        'This is the complete package for someone launching a business online. You receive a fully branded, production-ready website alongside all the learning resources needed to manage, update, and expand it yourself.',
+      ],
+      deliverables: [
+        'Prebuilt business platform',
+        'Lotus University platform',
+        'Lotus University learning resources',
+        'Builder documentation',
+        'Guided onboarding materials',
+        'Ready-to-use project foundation',
+        'Deployment-ready project',
+        'Complete project handoff',
+      ],
+      whatIncluded: 'You receive a fully functional, professionally designed business website paired with complete access to Lotus University. This includes the Lotus+ builder platform, all branding assets, website pages, client workflows, training platform with educational resources, production deployment, and comprehensive onboarding documentation.',
+      notIncluded: [
+        'Ongoing website maintenance',
+        'Content creation or copywriting beyond initial setup',
+        'Additional pages or sections beyond agreed scope',
+        'Ongoing training or consulting beyond project completion',
+        'Third-party tool integrations outside deliverables',
+        'Hosting costs or platform fees',
+        'Future design updates or redesigns',
+        'Marketing or promotional services',
+      ],
+      finalDelivery: 'Upon completion, you\'ll receive your deployed website, all branding assets, complete Lotus University access, and comprehensive documentation. We provide a training session to walk you through the builder, platform management, and learning resources. The project concludes with full project handoff and your confirmation that all deliverables are complete and operational.',
+      image: 'uploads/2green.png.png',
+    },
+    3: {
+      title: 'Lotus Enterprise',
+      tagline: 'Commercial license to use for business',
+      price: '$2,400',
+      summary: 'Everything in Lotus+, plus a commercial-use license, expanded platform capabilities, enhanced builder environment, and premium project configuration for production business use.',
+      overviewParagraphs: [
+        'Lotus Enterprise is designed for businesses that need to use the Lotus platform commercially. This package includes everything in Lotus+—the prebuilt business platform, Lotus University, and complete learning resources—plus a commercial-use license, expanded capabilities, and an enhanced builder environment.',
+        'You receive a production-ready platform configured with premium settings and advanced features. The commercial license grants you the right to use the delivered project for business purposes. All code, configurations, and assets are documented with comprehensive guidance for ongoing management.',
+        'This is the platform for businesses ready to operate at scale. You get everything needed to launch and operate a professional business with commercial rights, expanded capabilities, and premium configuration.',
+      ],
+      deliverables: [
+        'Everything included in Lotus+',
+        'Commercial-use license',
+        'Expanded platform capabilities',
+        'Enhanced builder environment',
+        'Premium project configuration',
+        'Advanced documentation',
+        'Production-ready deployment',
+        'Complete project handoff',
+      ],
+      whatIncluded: 'You receive everything in Lotus+ plus a commercial-use license for the delivered project. This includes the prebuilt business platform, Lotus University, expanded platform capabilities, enhanced builder environment, production-ready configuration, and comprehensive advanced documentation.',
+      notIncluded: [
+        'Ongoing platform maintenance',
+        'Additional pages beyond agreed scope',
+        'Content creation or copywriting',
+        'Lead follow-up or sales operations',
+        'Ongoing training beyond project completion',
+        'Third-party integrations outside deliverables',
+        'Hosting or infrastructure costs',
+        'Marketing or advertising campaigns',
+        'Future updates or new features',
+      ],
+      finalDelivery: 'Upon project completion, you\'ll receive your fully deployed commercial platform, all assets, complete documentation, Lotus University access, and commercial license documentation. We provide deployment assistance and a complete walkthrough of all platform features. The project concludes with final approval and successful platform launch.',
+      image: 'uploads/3.tur.png',
+    },
+    4: {
+      title: 'Lotus Founder',
+      tagline: 'Full ownership of code, repository, and IP',
+      price: '$2,800',
+      summary: 'Everything in Lotus Enterprise, plus full source code ownership, GitHub repository transfer, complete rights to modify and self-host, and all necessary ownership documentation.',
+      overviewParagraphs: [
+        'Lotus Founder is built for founders and business leaders who want complete ownership and control. This package includes everything in Lotus Enterprise—the commercial license, expanded platform, and complete Lotus University—plus full source code ownership and repository transfer.',
+        'You receive the complete, professionally built platform as your intellectual property. You have full rights to modify, expand, deploy anywhere, and manage the codebase independently. This includes a remote AI automation workspace setup, comprehensive technical documentation, and all necessary ownership transfer documentation.',
+        'With Lotus Founder, you don\'t license a platform—you own it completely. Every line of code, every configuration, every asset belongs to you. You can modify it, extend it, commercialize it, or use it however you need.',
+      ],
+      deliverables: [
+        'Everything included in Lotus Enterprise',
+        'Full ownership of the completed project',
+        'Complete source code',
+        'GitHub repository transfer',
+        'Full rights to modify, expand, and self-host',
+        'Remote AI Automation Workspace Setup',
+        'Technical documentation',
+        'Ownership transfer documentation',
+        'Marketing assets for promoting Lotus',
+        'Complete project handoff',
+      ],
+      whatIncluded: 'You receive complete ownership of the Lotus platform including full source code, GitHub repository access, and all rights to modification and deployment. This includes everything in Lotus Enterprise, complete source code ownership, repository transfer, AI automation workspace setup, comprehensive technical documentation, ownership transfer documentation, and promotional materials.',
+      notIncluded: [
+        'Ongoing development or maintenance',
+        'Ongoing training beyond project delivery',
+        'Future feature development or improvements',
+        'Third-party integrations outside deliverables',
+        'Hosting, infrastructure, or cloud costs',
+        'Business consulting or strategy services',
+        'Marketing or business development support',
+        'Support beyond initial project completion',
+      ],
+      finalDelivery: 'Upon completion, you receive complete ownership transfer of the Lotus platform including full source code, GitHub repository, all technical documentation, and ownership rights documentation. We provide comprehensive documentation review, repository access setup, and a complete handoff walkthrough. The project concludes with your confirmation of full access and ownership, with all assets transferred to your control.',
+      image: 'uploads/4purple.png.png',
+    },
+  };
+
+  selectSeal = (e) => {
+    const sealNumber = parseInt(e.currentTarget.dataset.seal);
+    this.setState({ currentView: sealNumber });
+  };
+
+  goBack = () => {
+    this.setState({ currentView: null });
+  };
+
+  renderVals() {
+    const { currentView } = this.state;
+    const data = currentView ? this.productData[currentView] : null;
+
+    return {
+      currentView,
+      selectSeal: this.selectSeal,
+      goBack: this.goBack,
+      productImage: data?.image,
+      productTitle: data?.title,
+      productTagline: data?.tagline,
+      productPrice: data?.price,
+      productSummary: data?.summary,
+      overviewParagraphs: data?.overviewParagraphs || [],
+      deliverables: data?.deliverables || [],
+      whatIncluded: data?.whatIncluded,
+      notIncluded: data?.notIncluded || [],
+      finalDelivery: data?.finalDelivery,
+    };
+  }
+}
+
+</script>
+</body>
+</html>
